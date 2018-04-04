@@ -2,6 +2,27 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
+      "CassandraCSharpDriver/3.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "System.Data.Common": "4.1.0",
+          "System.Diagnostics.StackTrace": "4.0.1",
+          "System.Diagnostics.TraceSource": "4.0.0",
+          "System.Net.NameResolution": "4.0.0",
+          "System.Net.Security": "4.0.0",
+          "System.Runtime.Serialization.Primitives": "4.1.1",
+          "System.Threading.Thread": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.5/Cassandra.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/Cassandra.dll": {}
+        }
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -3277,6 +3298,25 @@
           "ref/netstandard1.3/System.Console.dll": {}
         }
       },
+      "System.Data.Common/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.2/System.Data.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.2/System.Data.Common.dll": {}
+        }
+      },
       "System.Data.SqlClient/4.4.3": {
         "type": "package",
         "dependencies": {
@@ -3385,6 +3425,33 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Diagnostics.Tools.dll": {}
+        }
+      },
+      "System.Diagnostics.TraceSource/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Threading": "4.0.11",
+          "runtime.native.System": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Diagnostics.TraceSource.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Diagnostics.Tracing/4.3.0": {
@@ -4750,6 +4817,19 @@
     }
   },
   "libraries": {
+    "CassandraCSharpDriver/3.4.1": {
+      "sha512": "PPyTNAB93KUkBsl3UHu3gt7eM9PdLGm8UapRQmeZDtH+k78CZH++32N4VMm9B1pQUfBNjZWozJQ/8PAvE4DiYw==",
+      "type": "package",
+      "path": "cassandracsharpdriver/3.4.1",
+      "files": [
+        "cassandracsharpdriver.3.4.1.nupkg.sha512",
+        "cassandracsharpdriver.nuspec",
+        "lib/net45/Cassandra.dll",
+        "lib/net45/Cassandra.xml",
+        "lib/netstandard1.5/Cassandra.dll",
+        "lib/netstandard1.5/Cassandra.xml"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -8545,6 +8625,55 @@
         "system.console.nuspec"
       ]
     },
+    "System.Data.Common/4.1.0": {
+      "sha512": "epU8jeTe7aE7RqGHq9rZ8b0Q4Ah7DgubzHQblgZMSqgW1saW868WmooSyC5ywf8upLBkcVLDu93W9GPWUYsU2Q==",
+      "type": "package",
+      "path": "system.data.common/4.1.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net451/System.Data.Common.dll",
+        "lib/netstandard1.2/System.Data.Common.dll",
+        "lib/portable-net451+win8+wp8+wpa81/System.Data.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net451/System.Data.Common.dll",
+        "ref/netstandard1.2/System.Data.Common.dll",
+        "ref/netstandard1.2/System.Data.Common.xml",
+        "ref/netstandard1.2/de/System.Data.Common.xml",
+        "ref/netstandard1.2/es/System.Data.Common.xml",
+        "ref/netstandard1.2/fr/System.Data.Common.xml",
+        "ref/netstandard1.2/it/System.Data.Common.xml",
+        "ref/netstandard1.2/ja/System.Data.Common.xml",
+        "ref/netstandard1.2/ko/System.Data.Common.xml",
+        "ref/netstandard1.2/ru/System.Data.Common.xml",
+        "ref/netstandard1.2/zh-hans/System.Data.Common.xml",
+        "ref/netstandard1.2/zh-hant/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/System.Data.Common.dll",
+        "ref/portable-net451+win8+wp8+wpa81/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/de/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/es/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/fr/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/it/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ja/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ko/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ru/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/zh-hans/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/zh-hant/System.Data.Common.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.data.common.4.1.0.nupkg.sha512",
+        "system.data.common.nuspec"
+      ]
+    },
     "System.Data.SqlClient/4.4.3": {
       "sha512": "D1hEOS1oPLJ6WcGCzpTWe8SauWVxnDoDTUWhv5XCNdRm/QeSUk4BQ3ZDe7BH+zNVHDBkPYjVzpVjnCl43eOSGg==",
       "type": "package",
@@ -8891,6 +9020,45 @@
         "ref/xamarinwatchos10/_._",
         "system.diagnostics.tools.4.3.0.nupkg.sha512",
         "system.diagnostics.tools.nuspec"
+      ]
+    },
+    "System.Diagnostics.TraceSource/4.0.0": {
+      "sha512": "6WVCczFZKXwpWpzd/iJkYnsmWTSFFiU24Xx/YdHXBcu+nFI/ehTgeqdJQFbtRPzbrO3KtRNjvkhtj4t5/WwWsA==",
+      "type": "package",
+      "path": "system.diagnostics.tracesource/4.0.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Diagnostics.TraceSource.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Diagnostics.TraceSource.dll",
+        "ref/netstandard1.3/System.Diagnostics.TraceSource.dll",
+        "ref/netstandard1.3/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/de/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/es/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/fr/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/it/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ja/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ko/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ru/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/zh-hans/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/zh-hant/System.Diagnostics.TraceSource.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll",
+        "runtimes/win/lib/net46/System.Diagnostics.TraceSource.dll",
+        "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll",
+        "system.diagnostics.tracesource.4.0.0.nupkg.sha512",
+        "system.diagnostics.tracesource.nuspec"
       ]
     },
     "System.Diagnostics.Tracing/4.3.0": {
@@ -12531,6 +12699,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
+      "CassandraCSharpDriver >= 3.4.1",
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
@@ -12579,6 +12748,10 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
+          "CassandraCSharpDriver": {
+            "target": "Package",
+            "version": "[3.4.1, )"
+          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
             "version": "[2.0.6, )"

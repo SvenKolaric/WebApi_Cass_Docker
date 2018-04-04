@@ -1,0 +1,8 @@
+D:\CS\GIT\CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker\bin\Debug\netcoreapp2.0\CS_WebApi_Cass_Docker.deps.json
+D:\CS\GIT\CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker\bin\Debug\netcoreapp2.0\CS_WebApi_Cass_Docker.runtimeconfig.json
+D:\CS\GIT\CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker\bin\Debug\netcoreapp2.0\CS_WebApi_Cass_Docker.runtimeconfig.dev.json
+D:\CS\GIT\CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker\bin\Debug\netcoreapp2.0\CS_WebApi_Cass_Docker.dll
+D:\CS\GIT\CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker\obj\Debug\netcoreapp2.0\CS_WebApi_Cass_Docker.csprojResolveAssemblyReference.cache
+D:\CS\GIT\CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker\obj\Debug\netcoreapp2.0\CS_WebApi_Cass_Docker.csproj.CoreCompileInputs.cache
+D:\CS\GIT\CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker\obj\Debug\netcoreapp2.0\CS_WebApi_Cass_Docker.AssemblyInfoInputs.cache
+D:\CS\GIT\CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker\obj\Debug\netcoreapp2.0\CS_WebApi_Cass_Docker.AssemblyInfo.cs
