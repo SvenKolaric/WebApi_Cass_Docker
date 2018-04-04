@@ -16,7 +16,7 @@ namespace CS_WebApi_Cass_Docker.Controllers
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/values/77
+        // GET api/values/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
