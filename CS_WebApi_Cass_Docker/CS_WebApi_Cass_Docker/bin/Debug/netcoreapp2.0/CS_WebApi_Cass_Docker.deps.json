@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "98d3f26c3d2be655dcd29b095173295d29c326f7"
+    "signature": "86a062ac6f695f109b50d8949c1e6b958f65bfbe"
   },
   "compilationOptions": {
     "defines": [
@@ -23,41 +23,14 @@
     ".NETCoreApp,Version=v2.0": {
       "CS_WebApi_Cass_Docker/1.0.0": {
         "dependencies": {
-          "CassandraCSharpDriver": "3.4.1",
-          "DAL": "1.0.0",
-          "Microsoft.AspNet.Identity.Owin": "2.2.1",
-          "Microsoft.AspNet.WebApi.Owin": "5.2.4",
           "Microsoft.AspNetCore.All": "2.0.6",
-          "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.Owin.Cors": "4.0.0",
-          "Microsoft.Owin.Host.SystemWeb": "4.0.0",
-          "Microsoft.Owin.Security.OAuth": "4.0.0"
+          "Microsoft.NETCore.App": "2.0.0"
         },
         "runtime": {
           "CS_WebApi_Cass_Docker.dll": {}
         },
         "compile": {
           "CS_WebApi_Cass_Docker.dll": {}
-        }
-      },
-      "CassandraCSharpDriver/3.4.1": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "2.0.1",
-          "Microsoft.Extensions.Logging.Abstractions": "2.0.1",
-          "NETStandard.Library": "2.0.0",
-          "System.Data.Common": "4.1.0",
-          "System.Diagnostics.StackTrace": "4.3.0",
-          "System.Diagnostics.TraceSource": "4.0.0",
-          "System.Net.NameResolution": "4.3.0",
-          "System.Net.Security": "4.3.0",
-          "System.Runtime.Serialization.Primitives": "4.3.0",
-          "System.Threading.Thread": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.5/Cassandra.dll": {}
-        },
-        "compile": {
-          "lib/netstandard1.5/Cassandra.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -145,72 +118,6 @@
         },
         "compile": {
           "lib/netstandard1.6/Microsoft.AI.DependencyCollector.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Cors/5.0.0": {
-        "runtime": {
-          "lib/net45/System.Web.Cors.dll": {}
-        },
-        "compile": {
-          "lib/net45/System.Web.Cors.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.Core/2.2.1": {
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        },
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.Owin/2.2.1": {
-        "dependencies": {
-          "Microsoft.AspNet.Identity.Core": "2.2.1",
-          "Microsoft.Owin.Security": "4.0.0",
-          "Microsoft.Owin.Security.Cookies": "2.1.0",
-          "Microsoft.Owin.Security.OAuth": "4.0.0"
-        },
-        "runtime": {
-          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
-        },
-        "compile": {
-          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Client/5.2.4": {
-        "dependencies": {
-          "Newtonsoft.Json": "10.0.1",
-          "Newtonsoft.Json.Bson": "1.0.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Core/5.2.4": {
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Client": "5.2.4"
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.dll": {}
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.dll": {}
-        }
-      },
-      "Microsoft.AspNet.WebApi.Owin/5.2.4": {
-        "dependencies": {
-          "Microsoft.AspNet.WebApi.Core": "5.2.4",
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net45/System.Web.Http.Owin.dll": {}
-        },
-        "compile": {
-          "lib/net45/System.Web.Http.Owin.dll": {}
         }
       },
       "Microsoft.AspNetCore/2.0.2": {
@@ -2344,81 +2251,6 @@
         }
       },
       "Microsoft.NETCore.Targets/1.1.0": {},
-      "Microsoft.Owin/4.0.0": {
-        "dependencies": {
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.dll": {}
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.dll": {}
-        }
-      },
-      "Microsoft.Owin.Cors/4.0.0": {
-        "dependencies": {
-          "Microsoft.AspNet.Cors": "5.0.0",
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Cors.dll": {}
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Cors.dll": {}
-        }
-      },
-      "Microsoft.Owin.Host.SystemWeb/4.0.0": {
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
-        }
-      },
-      "Microsoft.Owin.Security/4.0.0": {
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Security.dll": {}
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Security.dll": {}
-        }
-      },
-      "Microsoft.Owin.Security.Cookies/2.1.0": {
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Microsoft.Owin.Security": "4.0.0",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
-        },
-        "compile": {
-          "lib/net45/Microsoft.Owin.Security.Cookies.dll": {}
-        }
-      },
-      "Microsoft.Owin.Security.OAuth/4.0.0": {
-        "dependencies": {
-          "Microsoft.Owin": "4.0.0",
-          "Microsoft.Owin.Security": "4.0.0",
-          "Newtonsoft.Json": "10.0.1",
-          "Owin": "1.0.0"
-        },
-        "runtime": {
-          "lib/net451/Microsoft.Owin.Security.OAuth.dll": {}
-        },
-        "compile": {
-          "lib/net451/Microsoft.Owin.Security.OAuth.dll": {}
-        }
-      },
       "Microsoft.Rest.ClientRuntime/2.3.8": {
         "dependencies": {
           "NETStandard.Library": "2.0.0",
@@ -2531,14 +2363,6 @@
         },
         "compile": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
-        }
-      },
-      "Owin/1.0.0": {
-        "runtime": {
-          "lib/net40/Owin.dll": {}
-        },
-        "compile": {
-          "lib/net40/Owin.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -2919,18 +2743,6 @@
           "System.Text.Encoding": "4.3.0"
         }
       },
-      "System.Data.Common/4.1.0": {
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.IO": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Text.RegularExpressions": "4.3.0",
-          "System.Threading.Tasks": "4.3.0"
-        }
-      },
       "System.Data.SqlClient/4.4.3": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.4.0",
@@ -3004,29 +2816,6 @@
           "Microsoft.NETCore.Platforms": "2.0.0",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
-        }
-      },
-      "System.Diagnostics.TraceSource/4.0.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "2.0.0",
-          "System.Collections": "4.3.0",
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Globalization": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Runtime.Extensions": "4.3.0",
-          "System.Threading": "4.3.0",
-          "runtime.native.System": "4.3.0"
-        },
-        "runtimeTargets": {
-          "runtime/unix/lib/_._": {
-            "rid": "unix",
-            "assetType": "runtime"
-          },
-          "runtime/win/lib/_._": {
-            "rid": "win",
-            "assetType": "runtime"
-          }
         }
       },
       "System.Diagnostics.Tracing/4.3.0": {
@@ -4005,18 +3794,6 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
-      "DAL/1.0.0": {
-        "dependencies": {
-          "CassandraCSharpDriver": "3.4.1",
-          "Microsoft.NETCore.App": "2.0.0"
-        },
-        "runtime": {
-          "DAL.dll": {}
-        },
-        "compile": {
-          "DAL.dll": {}
-        }
-      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -4201,13 +3978,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CassandraCSharpDriver/3.4.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-PPyTNAB93KUkBsl3UHu3gt7eM9PdLGm8UapRQmeZDtH+k78CZH++32N4VMm9B1pQUfBNjZWozJQ/8PAvE4DiYw==",
-      "path": "cassandracsharpdriver/3.4.1",
-      "hashPath": "cassandracsharpdriver.3.4.1.nupkg.sha512"
-    },
     "Libuv/1.10.0": {
       "type": "package",
       "serviceable": true,
@@ -4235,48 +4005,6 @@
       "sha512": "sha512-RWxdX90MY6tNF8S5lwRvJcHiBMIWwVLCxd4TGIEl3X0yAKaolY2vs4zTCvyCIVkEAMs1aInTgWkYwOjzYvAHWw==",
       "path": "microsoft.applicationinsights.dependencycollector/2.4.1",
       "hashPath": "microsoft.applicationinsights.dependencycollector.2.4.1.nupkg.sha512"
-    },
-    "Microsoft.AspNet.Cors/5.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-jNwFhEnm0jRlaRCgHEk52hJQltVoM2Bllysv2NtPYrgsVWyS3r5BOtCXkM/lEZ5AdUUBOvha+4QAVcVp1MZp5g==",
-      "path": "microsoft.aspnet.cors/5.0.0",
-      "hashPath": "microsoft.aspnet.cors.5.0.0.nupkg.sha512"
-    },
-    "Microsoft.AspNet.Identity.Core/2.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-jjurNglpmcv0SLBd4Fmar8ZoJ2yqfTf6iuP3p8wVH7Nvanfo8l3qTBzq3qRQz2BQlb6iXJiDWPjcnIImVz512g==",
-      "path": "microsoft.aspnet.identity.core/2.2.1",
-      "hashPath": "microsoft.aspnet.identity.core.2.2.1.nupkg.sha512"
-    },
-    "Microsoft.AspNet.Identity.Owin/2.2.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Cz/dqC85+6bgPj9Mt1qGLJ+v8HdTqXTMe1ms4e8pzPXJjDJw3DK7XtimtDtWwiDs63vnIDgy195TByV9wxEwjA==",
-      "path": "microsoft.aspnet.identity.owin/2.2.1",
-      "hashPath": "microsoft.aspnet.identity.owin.2.2.1.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebApi.Client/5.2.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OdBVC2bQWkf9qDd7Mt07ev4SwIdu6VmLBMTWC0D5cOP/HWSXyv/77otwtXVrAo42duNjvXOjzjP5oOI9m1+DTQ==",
-      "path": "microsoft.aspnet.webapi.client/5.2.4",
-      "hashPath": "microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebApi.Core/5.2.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rbLh178vmOWxhFQgiVkKmZyG53XEdyBZJbCsV36a4VxokIBzSRYUaMkXWEwJTy83PoHhPiDHNQFN3A3BQzwhtg==",
-      "path": "microsoft.aspnet.webapi.core/5.2.4",
-      "hashPath": "microsoft.aspnet.webapi.core.5.2.4.nupkg.sha512"
-    },
-    "Microsoft.AspNet.WebApi.Owin/5.2.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-mdA74GODirnqL1JiZkEUnmehtzvcVyrRjDe9O7XdP/EnpCcinf2VYAdVtvtmt+Lp6+QAYGnfm3shiXY++waITQ==",
-      "path": "microsoft.aspnet.webapi.owin/5.2.4",
-      "hashPath": "microsoft.aspnet.webapi.owin.5.2.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore/2.0.2": {
       "type": "package",
@@ -5349,48 +5077,6 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
-    "Microsoft.Owin/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-3TNVMkgF+yhesPYwq67ZOcLGtfKEupNNXcqVO4FRNjkQ1v0gBNb3k8CSuJonrCC8EAUp+OeUYrDTQePiyaVzpw==",
-      "path": "microsoft.owin/4.0.0",
-      "hashPath": "microsoft.owin.4.0.0.nupkg.sha512"
-    },
-    "Microsoft.Owin.Cors/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-eHEqyQbLgDCu2sg1H5iEh5syKGHk0X3wBkwrkLQ0mrEkr73F2/b3NtswdI+99QmECrqN4UXZmoIIjOdy/miZLw==",
-      "path": "microsoft.owin.cors/4.0.0",
-      "hashPath": "microsoft.owin.cors.4.0.0.nupkg.sha512"
-    },
-    "Microsoft.Owin.Host.SystemWeb/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-7zRXPcjn1OwHrhJ71KjfU07B//xxBhK3PfYZxVKDVdv1DhDPDAMAshmW1h7sFMcT7gLvSp78uDcKSucpuccCxw==",
-      "path": "microsoft.owin.host.systemweb/4.0.0",
-      "hashPath": "microsoft.owin.host.systemweb.4.0.0.nupkg.sha512"
-    },
-    "Microsoft.Owin.Security/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-utXSauY1N+toBsOkrSTN/YL3XknbwVTWIQHo4V7IKTcTiay2r9to0yJK4HluqC5KDuUwkjWdVOru/6j/2JjDnw==",
-      "path": "microsoft.owin.security/4.0.0",
-      "hashPath": "microsoft.owin.security.4.0.0.nupkg.sha512"
-    },
-    "Microsoft.Owin.Security.Cookies/2.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-P+3cjwBpUDGF+5s+oMfyySG0qvLqb71M+1q9jGSsaF0qCg14ix0qF5pEV6IqhGUEgV40E/1K4hDcWjS+essVoQ==",
-      "path": "microsoft.owin.security.cookies/2.1.0",
-      "hashPath": "microsoft.owin.security.cookies.2.1.0.nupkg.sha512"
-    },
-    "Microsoft.Owin.Security.OAuth/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-O5QhUEb7LVXCl/4lasHpd48raGqSQdBk5Z8rojFGcDa90n4u15DTPaNtQGje4Oh+bhSdQjvaoW2kKb8B5szDIw==",
-      "path": "microsoft.owin.security.oauth/4.0.0",
-      "hashPath": "microsoft.owin.security.oauth.4.0.0.nupkg.sha512"
-    },
     "Microsoft.Rest.ClientRuntime/2.3.8": {
       "type": "package",
       "serviceable": true,
@@ -5439,13 +5125,6 @@
       "sha512": "sha512-5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
       "path": "newtonsoft.json.bson/1.0.1",
       "hashPath": "newtonsoft.json.bson.1.0.1.nupkg.sha512"
-    },
-    "Owin/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
-      "path": "owin/1.0.0",
-      "hashPath": "owin.1.0.0.nupkg.sha512"
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",
@@ -5734,13 +5413,6 @@
       "path": "system.console/4.3.0",
       "hashPath": "system.console.4.3.0.nupkg.sha512"
     },
-    "System.Data.Common/4.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-epU8jeTe7aE7RqGHq9rZ8b0Q4Ah7DgubzHQblgZMSqgW1saW868WmooSyC5ywf8upLBkcVLDu93W9GPWUYsU2Q==",
-      "path": "system.data.common/4.1.0",
-      "hashPath": "system.data.common.4.1.0.nupkg.sha512"
-    },
     "System.Data.SqlClient/4.4.3": {
       "type": "package",
       "serviceable": true,
@@ -5789,13 +5461,6 @@
       "sha512": "sha512-UUvkJfSYJMM6x527dJg2VyWPSRqIVB0Z7dbjHst1zmwTXz5CcXSYJFWRpuigfbO1Lf7yfZiIaEUesfnl/g5EyA==",
       "path": "system.diagnostics.tools/4.3.0",
       "hashPath": "system.diagnostics.tools.4.3.0.nupkg.sha512"
-    },
-    "System.Diagnostics.TraceSource/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6WVCczFZKXwpWpzd/iJkYnsmWTSFFiU24Xx/YdHXBcu+nFI/ehTgeqdJQFbtRPzbrO3KtRNjvkhtj4t5/WwWsA==",
-      "path": "system.diagnostics.tracesource/4.0.0",
-      "hashPath": "system.diagnostics.tracesource.4.0.0.nupkg.sha512"
     },
     "System.Diagnostics.Tracing/4.3.0": {
       "type": "package",
@@ -6314,11 +5979,6 @@
       "sha512": "sha512-W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
-    },
-    "DAL/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Microsoft.NETCore.App/2.0.0": {
       "type": "package",
