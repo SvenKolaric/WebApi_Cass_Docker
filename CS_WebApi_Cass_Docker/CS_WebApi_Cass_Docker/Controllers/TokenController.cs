@@ -22,6 +22,7 @@ namespace CS_WebApi_Cass_Docker.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [IgnoreAntiforgeryToken]
         public IActionResult CreateToken([FromBody]LoginModel login)
         {
             IActionResult response = Unauthorized();
@@ -38,11 +39,20 @@ namespace CS_WebApi_Cass_Docker.Controllers
 
         private string BuildToken(UserModel user)
         {
+            //Define claims in the token
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Name),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(_config["Jwt:Issuer"], 
                 _config["Jwt:Issuer"],
+                claims,
                 expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: creds);
 
@@ -53,7 +63,7 @@ namespace CS_WebApi_Cass_Docker.Controllers
         {
             UserModel user = null;
             //Hardy cody
-            if (login.Email == "admin@admin.hr" && login.Password == "admin")
+            if (login.Email == "admin" && login.Password == "admin")
             {
                 user = new UserModel { Name = "adminko", Email = "admin@admin.com" };
             }

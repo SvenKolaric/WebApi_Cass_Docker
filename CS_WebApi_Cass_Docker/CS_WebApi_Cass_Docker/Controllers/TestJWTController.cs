@@ -34,6 +34,17 @@ namespace CS_WebApi_Cass_Docker.Controllers
                 new Users {Email = "admin@admin.hr", Pass = "admin", IsAdmin = true }
             };
 
+            //if (currentUser.HasClaim(c => c.Type == ClaimTypes.DateOfBirth))
+            //{
+            //    DateTime birthDate = DateTime.Parse(currentUser.Claims.FirstOrDefault(c => c.Type == ClaimTypes.DateOfBirth).Value);
+            //    userAge = DateTime.Today.Year - birthDate.Year;
+            //}
+
+            //if (userAge < 18)
+            //{
+            //    resultBookList = resultBookList.Where(b => !b.AgeRestriction).ToArray();
+            //}
+
             return resultUserList;
         }
 
