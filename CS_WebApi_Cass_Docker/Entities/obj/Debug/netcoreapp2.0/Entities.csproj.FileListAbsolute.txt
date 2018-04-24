@@ -6,3 +6,4 @@ D:\CS\GIT\CS_WebApi_Cass_Docker\Entities\obj\Debug\netcoreapp2.0\Entities.Assemb
 D:\CS\GIT\CS_WebApi_Cass_Docker\Entities\obj\Debug\netcoreapp2.0\Entities.AssemblyInfo.cs
 D:\CS\GIT\CS_WebApi_Cass_Docker\Entities\obj\Debug\netcoreapp2.0\Entities.dll
 D:\CS\GIT\CS_WebApi_Cass_Docker\Entities\obj\Debug\netcoreapp2.0\Entities.pdb
+D:\CS\GIT\CS_WebApi_Cass_Docker\Entities\obj\Debug\netcoreapp2.0\Entities.csprojResolveAssemblyReference.cache

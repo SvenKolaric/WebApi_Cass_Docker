@@ -1,6 +1,4 @@
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\BL.Login.deps.json
-D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\BL.Login.runtimeconfig.json
-D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\BL.Login.runtimeconfig.dev.json
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\BL.Login.dll
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\BL.Login.pdb
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\obj\Debug\netcoreapp2.0\BL.Login.csproj.CoreCompileInputs.cache

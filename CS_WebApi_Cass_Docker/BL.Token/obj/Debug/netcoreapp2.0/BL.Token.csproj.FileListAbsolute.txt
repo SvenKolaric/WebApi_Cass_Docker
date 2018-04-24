@@ -1,6 +1,4 @@
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\bin\Debug\netcoreapp2.0\BL.Token.deps.json
-D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\bin\Debug\netcoreapp2.0\BL.Token.runtimeconfig.json
-D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\bin\Debug\netcoreapp2.0\BL.Token.runtimeconfig.dev.json
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\bin\Debug\netcoreapp2.0\BL.Token.dll
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\bin\Debug\netcoreapp2.0\BL.Token.pdb
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\obj\Debug\netcoreapp2.0\BL.Token.csproj.CoreCompileInputs.cache
@@ -8,3 +6,4 @@ D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\obj\Debug\netcoreapp2.0\BL.Token.Assemb
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\obj\Debug\netcoreapp2.0\BL.Token.AssemblyInfo.cs
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\obj\Debug\netcoreapp2.0\BL.Token.dll
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\obj\Debug\netcoreapp2.0\BL.Token.pdb
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Token\obj\Debug\netcoreapp2.0\BL.Token.csprojResolveAssemblyReference.cache
