@@ -45,7 +45,7 @@ namespace CS_WebApi_Cass_Docker.Controllers
             //Define claims in the token
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Name),
+                new Claim(JwtRegisteredClaimNames.Sub, user.FullName),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
@@ -68,7 +68,7 @@ namespace CS_WebApi_Cass_Docker.Controllers
             //Hardy cody
             if (login.Email == "admin" && login.Password == "admin")
             {
-                user = new UserModel { Name = "adminko", Email = "admin@admin.com" };
+                user = new UserModel { FullName = "adminko", Email = "admin@admin.com" };
             }
 
             return user;
@@ -82,9 +82,9 @@ namespace CS_WebApi_Cass_Docker.Controllers
 
         public class UserModel
         {
-            public string Name { get; set; }
+            public string FullName { get; set; }
             public string Email { get; set; }
-            public bool IsAdmin { get; set; }
+            public bool Role { get; set; }
         }
     }
 }
