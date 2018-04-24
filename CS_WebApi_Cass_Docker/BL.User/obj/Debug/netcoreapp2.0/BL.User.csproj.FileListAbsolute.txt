@@ -1,0 +1,10 @@
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\bin\Debug\netcoreapp2.0\BL.User.deps.json
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\bin\Debug\netcoreapp2.0\BL.User.runtimeconfig.json
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\bin\Debug\netcoreapp2.0\BL.User.runtimeconfig.dev.json
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\bin\Debug\netcoreapp2.0\BL.User.dll
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\bin\Debug\netcoreapp2.0\BL.User.pdb
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\obj\Debug\netcoreapp2.0\BL.User.csproj.CoreCompileInputs.cache
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\obj\Debug\netcoreapp2.0\BL.User.AssemblyInfoInputs.cache
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\obj\Debug\netcoreapp2.0\BL.User.AssemblyInfo.cs
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\obj\Debug\netcoreapp2.0\BL.User.dll
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.User\obj\Debug\netcoreapp2.0\BL.User.pdb

@@ -1,6 +1,4 @@
 D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\bin\Debug\netcoreapp2.0\DAL.deps.json
-D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\bin\Debug\netcoreapp2.0\DAL.runtimeconfig.json
-D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\bin\Debug\netcoreapp2.0\DAL.runtimeconfig.dev.json
 D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\bin\Debug\netcoreapp2.0\DAL.dll
 D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\obj\Debug\netcoreapp2.0\DAL.csproj.CoreCompileInputs.cache
 D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\obj\Debug\netcoreapp2.0\DAL.AssemblyInfoInputs.cache
