@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CS_WebApi_Cass_Docker", "CS_WebApi_Cass_Docker\CS_WebApi_Cass_Docker.csproj", "{73F55E0A-4A8C-4FB7-B0E9-3975C676411A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{3C55D43D-C00E-4A66-A453-CDD6D205D793}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{3C55D43D-C00E-4A66-A453-CDD6D205D793}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "CassandraCSharpDriver/3.4.1": {
+      "CassandraCSharpDriver/3.5.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "1.0.0",
@@ -1301,12 +1301,12 @@
     }
   },
   "libraries": {
-    "CassandraCSharpDriver/3.4.1": {
-      "sha512": "PPyTNAB93KUkBsl3UHu3gt7eM9PdLGm8UapRQmeZDtH+k78CZH++32N4VMm9B1pQUfBNjZWozJQ/8PAvE4DiYw==",
+    "CassandraCSharpDriver/3.5.0": {
+      "sha512": "X+rQHNceWewijxhJuAf4bHnL9cCxg0W47YHn2jn5EpdMvy3h6NlzkZmEGk+xF6iboqYxLCNqMO0aDPOgLGjPlA==",
       "type": "package",
-      "path": "cassandracsharpdriver/3.4.1",
+      "path": "cassandracsharpdriver/3.5.0",
       "files": [
-        "cassandracsharpdriver.3.4.1.nupkg.sha512",
+        "cassandracsharpdriver.3.5.0.nupkg.sha512",
         "cassandracsharpdriver.nuspec",
         "lib/net45/Cassandra.dll",
         "lib/net45/Cassandra.xml",
@@ -4653,7 +4653,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "CassandraCSharpDriver >= 3.4.1",
+      "CassandraCSharpDriver >= 3.5.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
@@ -4703,7 +4703,7 @@
         "dependencies": {
           "CassandraCSharpDriver": {
             "target": "Package",
-            "version": "[3.4.1, )"
+            "version": "[3.5.0, )"
           },
           "Microsoft.NETCore.App": {
             "target": "Package",

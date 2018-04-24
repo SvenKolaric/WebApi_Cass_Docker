@@ -3,12 +3,12 @@ using Cassandra;
 
 namespace DAL
 {
-    class CassandraDAL
+    public class CassandraDB
     {
         private Cluster _cluster;
         private ISession _session;
 
-        public CassandraDAL()
+        public CassandraDB()
         {
             Connect();
         }
@@ -20,8 +20,7 @@ namespace DAL
             cassandraBuilder.AddContactPoint("127.0.0.1");
 
             _cluster = cassandraBuilder.Build();
-
-            _session = _cluster.Connect("WebApiCassDB");
+            _session = _cluster.Connect("webapicassdb");
         }
 
         protected ISession GetSession()
