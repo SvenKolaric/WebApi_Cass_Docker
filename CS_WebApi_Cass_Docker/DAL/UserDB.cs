@@ -13,6 +13,7 @@ namespace DAL
             string CQLstr = @"SELECT email, fullname, id, password, salt, role 
                               FROM webapicassdb.user_by_email 
                               WHERE email = ?";
+
             ISession localSession = GetSession();
             var statement1 = localSession.Prepare(CQLstr);
 
