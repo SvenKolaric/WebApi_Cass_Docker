@@ -32,6 +32,9 @@ namespace CS_WebApi_Cass_Docker.Controllers
             {
                 var tokenString = BuildToken(user);
                 response = Ok(new { token = tokenString });
+            } else
+            {
+                return BadRequest("Could not verify username and password");
             }
 
             return response;
