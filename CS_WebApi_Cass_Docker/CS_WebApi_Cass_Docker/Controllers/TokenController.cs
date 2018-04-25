@@ -23,16 +23,19 @@ namespace CS_WebApi_Cass_Docker.Controllers
         [AllowAnonymous]
         [HttpPost]
         [IgnoreAntiforgeryToken]
-        public IActionResult CreateToken([FromBody]LoginModel login)
+        public IActionResult CreateToken([FromBody]Entities.Login login)
         {
+            BL.Login.BLLogin blProvider = new BL.Login.BLLogin();
             IActionResult response = Unauthorized();
-            var user = Authenticate(login);
+            
+            var user = blProvider.CheckLogin(login);
 
             if (user != null)
             {
                 var tokenString = BuildToken(user);
                 response = Ok(new { token = tokenString });
-            } else
+            }
+            else
             {
                 return BadRequest("Could not verify username and password");
             }
@@ -40,12 +43,12 @@ namespace CS_WebApi_Cass_Docker.Controllers
             return response;
         }
 
-        private string BuildToken(UserModel user)
+        private string BuildToken(DTO.User user)
         {
             //Define claims in the token
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, user.FullName),
+                new Claim("Role", user.Role),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
@@ -60,31 +63,6 @@ namespace CS_WebApi_Cass_Docker.Controllers
                 signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        private UserModel Authenticate(LoginModel login)
-        {
-            UserModel user = null;
-            //Hardy cody
-            if (login.Email == "admin" && login.Password == "admin")
-            {
-                user = new UserModel { FullName = "adminko", Email = "admin@admin.com" };
-            }
-
-            return user;
-        }
-
-        public class LoginModel
-        {
-            public string Email { get; set; }
-            public string Password { get; set; }
-        }
-
-        public class UserModel
-        {
-            public string FullName { get; set; }
-            public string Email { get; set; }
-            public bool Role { get; set; }
         }
     }
 }

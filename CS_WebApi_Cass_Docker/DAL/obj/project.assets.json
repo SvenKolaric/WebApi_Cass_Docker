@@ -1297,6 +1297,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Threading.ThreadPool.dll": {}
         }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
       }
     }
   },
@@ -4649,11 +4659,17 @@
         "system.threading.threadpool.4.0.10.nupkg.sha512",
         "system.threading.threadpool.nuspec"
       ]
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "CassandraCSharpDriver >= 3.5.0",
+      "Entities >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
@@ -4689,7 +4705,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\Entities\\Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

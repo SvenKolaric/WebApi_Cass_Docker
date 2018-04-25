@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v2.0": {
       "DAL/1.0.0": {
         "dependencies": {
-          "CassandraCSharpDriver": "3.5.0"
+          "CassandraCSharpDriver": "3.5.0",
+          "Entities": "1.0.0"
         },
         "runtime": {
           "DAL.dll": {}
@@ -739,6 +740,11 @@
           "System.Runtime": "4.1.0",
           "System.Runtime.Handles": "4.0.1"
         }
+      },
+      "Entities/1.0.0": {
+        "runtime": {
+          "Entities.dll": {}
+        }
       }
     }
   },
@@ -1188,6 +1194,11 @@
       "sha512": "sha512-IMXgB5Vf/5Qw1kpoVgJMOvUO1l32aC+qC3OaIZjWJOjvcxuxNWOK2ZTWWYXfij22NHxT2j1yWX5vlAeQWld9vA==",
       "path": "system.threading.threadpool/4.0.10",
       "hashPath": "system.threading.threadpool.4.0.10.nupkg.sha512"
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

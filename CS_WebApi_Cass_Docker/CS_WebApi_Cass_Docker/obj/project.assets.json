@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "CassandraCSharpDriver/3.4.1": {
+      "CassandraCSharpDriver/3.5.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Logging": "1.0.0",
@@ -5095,16 +5095,104 @@
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
+      },
+      "BL.Login/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "BL.Password": "1.0.0",
+          "BL.User": "1.0.0",
+          "DTO": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BL.Login.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BL.Login.dll": {}
+        }
+      },
+      "BL.Password/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BL.Password.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BL.Password.dll": {}
+        }
+      },
+      "BL.Token/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BL.Token.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BL.Token.dll": {}
+        }
+      },
+      "BL.User/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "DAL": "1.0.0",
+          "DTO": "1.0.0",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BL.User.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BL.User.dll": {}
+        }
+      },
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "CassandraCSharpDriver": "3.5.0",
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
+      "DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DTO.dll": {}
+        }
+      },
+      "Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Entities.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "CassandraCSharpDriver/3.4.1": {
-      "sha512": "PPyTNAB93KUkBsl3UHu3gt7eM9PdLGm8UapRQmeZDtH+k78CZH++32N4VMm9B1pQUfBNjZWozJQ/8PAvE4DiYw==",
+    "CassandraCSharpDriver/3.5.0": {
+      "sha512": "X+rQHNceWewijxhJuAf4bHnL9cCxg0W47YHn2jn5EpdMvy3h6NlzkZmEGk+xF6iboqYxLCNqMO0aDPOgLGjPlA==",
       "type": "package",
-      "path": "cassandracsharpdriver/3.4.1",
+      "path": "cassandracsharpdriver/3.5.0",
       "files": [
-        "cassandracsharpdriver.3.4.1.nupkg.sha512",
+        "cassandracsharpdriver.3.5.0.nupkg.sha512",
         "cassandracsharpdriver.nuspec",
         "lib/net45/Cassandra.dll",
         "lib/net45/Cassandra.xml",
@@ -13282,11 +13370,52 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "BL.Login/1.0.0": {
+      "type": "project",
+      "path": "../BL.Login/BL.Login.csproj",
+      "msbuildProject": "../BL.Login/BL.Login.csproj"
+    },
+    "BL.Password/1.0.0": {
+      "type": "project",
+      "path": "../BL.Password/BL.Password.csproj",
+      "msbuildProject": "../BL.Password/BL.Password.csproj"
+    },
+    "BL.Token/1.0.0": {
+      "type": "project",
+      "path": "../BL.Token/BL.Token.csproj",
+      "msbuildProject": "../BL.Token/BL.Token.csproj"
+    },
+    "BL.User/1.0.0": {
+      "type": "project",
+      "path": "../BL.User/BL.User.csproj",
+      "msbuildProject": "../BL.User/BL.User.csproj"
+    },
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
+    },
+    "DTO/1.0.0": {
+      "type": "project",
+      "path": "../DTO/DTO.csproj",
+      "msbuildProject": "../DTO/DTO.csproj"
+    },
+    "Entities/1.0.0": {
+      "type": "project",
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "CassandraCSharpDriver >= 3.4.1",
+      "BL.Login >= 1.0.0",
+      "BL.Password >= 1.0.0",
+      "BL.Token >= 1.0.0",
+      "BL.User >= 1.0.0",
+      "CassandraCSharpDriver >= 3.5.0",
+      "DTO >= 1.0.0",
+      "Entities >= 1.0.0",
       "Microsoft.AspNetCore.All >= 2.0.6",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3"
@@ -13324,7 +13453,26 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\BL.Login\\BL.Login.csproj": {
+              "projectPath": "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\BL.Login\\BL.Login.csproj"
+            },
+            "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\BL.Password\\BL.Password.csproj": {
+              "projectPath": "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\BL.Password\\BL.Password.csproj"
+            },
+            "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\BL.Token\\BL.Token.csproj": {
+              "projectPath": "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\BL.Token\\BL.Token.csproj"
+            },
+            "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\BL.User\\BL.User.csproj": {
+              "projectPath": "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\BL.User\\BL.User.csproj"
+            },
+            "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\DTO\\DTO.csproj": {
+              "projectPath": "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\DTO\\DTO.csproj"
+            },
+            "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\CS\\GIT\\CS_WebApi_Cass_Docker\\Entities\\Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -13338,7 +13486,7 @@
         "dependencies": {
           "CassandraCSharpDriver": {
             "target": "Package",
-            "version": "[3.4.1, )"
+            "version": "[3.5.0, )"
           },
           "Microsoft.AspNetCore.All": {
             "target": "Package",

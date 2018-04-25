@@ -7,3 +7,6 @@ D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\bin\Debug\netcoreapp2.0\DAL.pdb
 D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\obj\Debug\netcoreapp2.0\DAL.csprojResolveAssemblyReference.cache
 D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\obj\Debug\netcoreapp2.0\DAL.dll
 D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\obj\Debug\netcoreapp2.0\DAL.pdb
+D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\bin\Debug\netcoreapp2.0\Entities.dll
+D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\bin\Debug\netcoreapp2.0\Entities.pdb
+D:\CS\GIT\CS_WebApi_Cass_Docker\DAL\obj\Debug\netcoreapp2.0\DAL.csproj.CopyComplete
