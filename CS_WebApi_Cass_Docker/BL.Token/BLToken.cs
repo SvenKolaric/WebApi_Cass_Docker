@@ -27,16 +27,11 @@ namespace BL.Token
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
                 _config["Jwt:Issuer"],
                 claims,
-                expires: DateTime.Now.AddMinutes(30),
+                notBefore: DateTime.Now,//.AddHours(2), //naše vrijeme
+                expires: DateTime.Now.AddMinutes(30),//AddHours(2).AddMinutes(30), //naše vrijeme
                 signingCredentials: creds);
 
-            DAL.TokenDB tokensss = new DAL.TokenDB();
-            Entities.Token t = new Entities.Token();
-            t.TokenData = new JwtSecurityTokenHandler().WriteToken(token);
-            t.Email = user.Email;
-            t.CreationDate = DateTime.Now;
-            t.ExpirationDate = DateTime.Now.AddMinutes(30); //token.ValidTo
-            tokensss.SaveToken(t);
+            SaveTokenToDB(user.Email, token);
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
@@ -47,10 +42,25 @@ namespace BL.Token
             {
                 new Claim("Role", user.Role),
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                //new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
             return claims;
+        }
+
+        private void SaveTokenToDB(string _email, JwtSecurityToken _token)
+        {
+            DAL.TokenDB dalProvider = new DAL.TokenDB();
+
+            Entities.Token t = new Entities.Token
+            {
+                TokenData = new JwtSecurityTokenHandler().WriteToken(_token),
+                Email = _email,
+                CreationDate = _token.ValidFrom,
+                ExpirationDate = _token.ValidTo
+            };
+
+            dalProvider.SaveToken(t);
         }
     }
 }

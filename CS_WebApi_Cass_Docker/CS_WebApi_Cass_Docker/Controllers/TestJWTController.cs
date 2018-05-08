@@ -24,10 +24,11 @@ namespace CS_WebApi_Cass_Docker.Controllers
     {
         // GET: api/TestJWT
         [HttpGet]
-        [Authorize]
+        //[Authorize]
+        [Authorize(Policy = "User")]
         public IEnumerable<Users> Get()
         {
-            var currentUser = HttpContext.User;
+            var currentUser = HttpContext.User; //tututu!!!!!!!!!!!!! info o korisniku
             var resultUserList = new Users[]
             {
                 new Users {Email = "papa@papa", Pass = "password", IsAdmin = false },

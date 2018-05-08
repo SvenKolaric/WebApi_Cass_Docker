@@ -47,6 +47,16 @@ namespace CS_WebApi_Cass_Docker
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                     };
                 });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin",
+                    policy => policy.RequireClaim("Role", "admin"));
+
+                options.AddPolicy("User",
+                    policy => policy.RequireClaim("Role", "user"));
+            });
+
             services.AddMvc(options =>
             {
                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
@@ -60,7 +70,7 @@ namespace CS_WebApi_Cass_Docker
             {
                 app.UseDeveloperExceptionPage();
             }
-            //Use your tokens
+
             app.UseAuthentication();
 
             app.UseMvc();
