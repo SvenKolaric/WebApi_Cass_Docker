@@ -25,14 +25,16 @@ namespace CS_WebApi_Cass_Docker.Controllers
         [IgnoreAntiforgeryToken]
         public IActionResult CreateToken([FromBody]Entities.Login login)
         {
-            BL.Login.BLLogin blProvider = new BL.Login.BLLogin();
+            BL.Login.BLLogin blLoginProvider = new BL.Login.BLLogin();
+            BL.Token.BLToken blTokenProvider = new BL.Token.BLToken(_config);
+
             IActionResult response = Unauthorized();
             
-            var user = blProvider.CheckLogin(login);
+            var user = blLoginProvider.CheckLogin(login);
 
             if (user != null)
             {
-                var tokenString = BuildToken(user);
+                var tokenString = blTokenProvider.BuildToken(user);
                 response = Ok(new { token = tokenString });
             }
             else
@@ -41,28 +43,6 @@ namespace CS_WebApi_Cass_Docker.Controllers
             }
 
             return response;
-        }
-
-        private string BuildToken(DTO.User user)
-        {
-            //Define claims in the token
-            var claims = new[]
-            {
-                new Claim("Role", user.Role),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(_config["Jwt:Issuer"], 
-                _config["Jwt:Issuer"],
-                claims,
-                expires: DateTime.Now.AddMinutes(30),
-                signingCredentials: creds);
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }
