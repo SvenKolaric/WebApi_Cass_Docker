@@ -30,6 +30,13 @@ namespace BL.Token
                 expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: creds);
 
+            DAL.TokenDB tokensss = new DAL.TokenDB();
+            Entities.Token t = new Entities.Token();
+            t.TokenData = new JwtSecurityTokenHandler().WriteToken(token);
+            t.Email = user.Email;
+            t.CreationDate = DateTime.Now;
+            t.ExpirationDate = DateTime.Now.AddMinutes(30); //token.ValidTo
+            tokensss.SaveToken(t);
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
