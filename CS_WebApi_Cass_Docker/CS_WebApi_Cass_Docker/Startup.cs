@@ -27,6 +27,9 @@ namespace CS_WebApi_Cass_Docker
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //SECRET KEY MUST NOT BE KEPT IN THE appsetting.json!!!!!! ali zasada da ne kompliciramo
+            var secretKey = Environment.GetEnvironmentVariable("JWT_KEY"); 
+
             //Register JWT authentication schema, Jwt:Issuer and Jwt:Key stored in appsettings.json
             //For the JWT to be valid:
             //1.Validate that the server created that token (ValidateIssuer = true)
@@ -36,6 +39,9 @@ namespace CS_WebApi_Cass_Docker
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
                 AddJwtBearer(options =>
                 {
+                    options.RequireHttpsMetadata = false; //sets HTTPS req, olny set false during development
+                    options.SaveToken = true;
+                    
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = true,
@@ -44,10 +50,11 @@ namespace CS_WebApi_Cass_Docker
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = Configuration["Jwt:Issuer"],
                         ValidAudience = Configuration["Jwt:Issuer"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))//key inace uzimaj iz enviroment varijable
                     };
                 });
 
+            //Define policies/roles that are referenced in the token and DB
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin",

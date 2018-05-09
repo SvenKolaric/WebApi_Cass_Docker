@@ -29,6 +29,17 @@ namespace CS_WebApi_Cass_Docker.Controllers
         public IEnumerable<Users> Get()
         {
             var currentUser = HttpContext.User; //tututu!!!!!!!!!!!!! info o korisniku
+            string authorization = Request.Headers["Authorization"];
+            var currentUser2 = HttpContext.User.Identity.Name;
+            // If no authorization header found, nothing to process further
+            if (string.IsNullOrEmpty(authorization))
+
+            if (authorization.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+            {
+                var token = authorization.Substring("Bearer ".Length).Trim();
+                // If no token found, no further work possible
+            }
+
             var resultUserList = new Users[]
             {
                 new Users {Email = "papa@papa", Pass = "password", IsAdmin = false },

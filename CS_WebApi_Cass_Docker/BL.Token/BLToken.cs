@@ -28,7 +28,7 @@ namespace BL.Token
                 _config["Jwt:Issuer"],
                 claims,
                 notBefore: DateTime.Now,//.AddHours(2), //naše vrijeme
-                expires: DateTime.Now.AddMinutes(1),//AddHours(2).AddMinutes(30), //naše vrijeme
+                expires: DateTime.Now.AddMinutes(10),//AddHours(2).AddMinutes(30), //naše vrijeme
                 signingCredentials: creds);
 
             SaveTokenToDB(user.Email, token);
