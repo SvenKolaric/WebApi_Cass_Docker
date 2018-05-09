@@ -36,25 +36,28 @@ namespace CS_WebApi_Cass_Docker
             //2.Recipient is authorized to receive it (ValidateAudience = true)
             //3.Check expiration date and the signing key of the issuer (ValidateLifetime = true)
             //4.Verify signing key is part of a list of trusted keys (ValidateIssuerSigningKey = true)
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
-                AddJwtBearer(options =>
-                {
-                    options.RequireHttpsMetadata = false; //sets HTTPS req, olny set false during development
-                    options.SaveToken = true;
-                    
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-                        ValidIssuer = Configuration["Jwt:Issuer"],
-                        ValidAudience = Configuration["Jwt:Issuer"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))//key inace uzimaj iz enviroment varijable
-                    };
-                });
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false; //sets HTTPS req, olny set false during development
+                options.SaveToken = true;
 
-            //Define policies/roles that are referenced in the token and DB
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    ValidAudience = Configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))//key inace uzimaj iz enviroment varijable
+                };
+            });
+
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin",
