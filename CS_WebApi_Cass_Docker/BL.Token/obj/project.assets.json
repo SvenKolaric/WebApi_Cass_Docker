@@ -1915,6 +1915,18 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "UAParser/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/UAParser.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/UAParser.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -6373,6 +6385,19 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "UAParser/3.0.0": {
+      "sha512": "q3HQawDOf6+8lzYyc+WDSPO2Sz0F5SpD7jaBm22bBy1i1/DtHTw7rPfuX5J7IRDVXxkJXp5QTL1NIvXCaKTkvQ==",
+      "type": "package",
+      "path": "uaparser/3.0.0",
+      "files": [
+        "lib/netstandard1.0/UAParser.dll",
+        "lib/netstandard1.0/UAParser.xml",
+        "lib/netstandard1.3/UAParser.dll",
+        "lib/netstandard1.3/UAParser.xml",
+        "uaparser.3.0.0.nupkg.sha512",
+        "uaparser.nuspec"
+      ]
+    },
     "DAL/1.0.0": {
       "type": "project",
       "path": "../DAL/DAL.csproj",
@@ -6396,7 +6421,8 @@
       "Entities >= 1.0.0",
       "Microsoft.Extensions.Configuration >= 2.0.2",
       "Microsoft.NETCore.App >= 2.0.0",
-      "System.IdentityModel.Tokens.Jwt >= 5.2.2"
+      "System.IdentityModel.Tokens.Jwt >= 5.2.2",
+      "UAParser >= 3.0.0"
     ]
   },
   "packageFolders": {
@@ -6466,6 +6492,10 @@
           "System.IdentityModel.Tokens.Jwt": {
             "target": "Package",
             "version": "[5.2.2, )"
+          },
+          "UAParser": {
+            "target": "Package",
+            "version": "[3.0.0, )"
           }
         },
         "imports": [

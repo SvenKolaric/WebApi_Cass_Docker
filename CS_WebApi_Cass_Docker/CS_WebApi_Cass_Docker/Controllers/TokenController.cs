@@ -6,7 +6,7 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Wangkanai.Detection;
+using System.Web;
 
 namespace CS_WebApi_Cass_Docker.Controllers
 {
@@ -15,18 +15,10 @@ namespace CS_WebApi_Cass_Docker.Controllers
     public class TokenController : Controller
     {
         private IConfiguration _config;
-        private readonly IUserAgent _useragent;
-        private readonly IDevice _device;
-        private readonly IBrowser _browser;
 
-
-        public TokenController(IConfiguration config, IDeviceResolver deviceResolver, IBrowserResolver browserResolver)
+        public TokenController(IConfiguration config)
         {
             _config = config;
-            _useragent = deviceResolver.UserAgent;
-            _device = deviceResolver.Device;
-            _browser = browserResolver.Browser;
-
         }
 
         [AllowAnonymous]
@@ -38,17 +30,19 @@ namespace CS_WebApi_Cass_Docker.Controllers
             BL.Token.BLToken blTokenProvider = new BL.Token.BLToken(_config);
 
             IActionResult response = Unauthorized();
-            
+
             var user = blLoginProvider.CheckLogin(login); //makneš ovo
 
-            //var user1 = new DTO.User();   //odkomentiraš ovo
-            //user1.Email = "user.user@gmail.com";
-            //user1.Password = "12345678";
-            //user1.Role = "user";
+            //var user = new DTO.User
+            //{
+            //    Email = "user.user@gmail.com",
+            //    Password = "12345678",
+            //    Role = "user"
+            //};   //odkomentiraš ovo
 
             if (user != null)
             {
-                var deviceName = _device.Type.ToString() + " " + _browser.Type.ToString();
+                var deviceName = blTokenProvider.GetDeviceName(Request.Headers["User-Agent"]);
                 var tokenString = blTokenProvider.BuildToken(user, deviceName);
                 response = Ok(new { token = tokenString });
             }

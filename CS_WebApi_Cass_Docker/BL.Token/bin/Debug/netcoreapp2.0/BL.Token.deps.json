@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "9b293eb909589996c84bf13722181ba90e5cc9aa"
+    "signature": "6bb2332981d3d2711ecf8ddf5c471f1f114d2dac"
   },
   "compilationOptions": {},
   "targets": {
@@ -12,7 +12,8 @@
           "DTO": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.Extensions.Configuration": "2.0.2",
-          "System.IdentityModel.Tokens.Jwt": "5.2.2"
+          "System.IdentityModel.Tokens.Jwt": "5.2.2",
+          "UAParser": "3.0.0"
         },
         "runtime": {
           "BL.Token.dll": {}
@@ -1191,6 +1192,11 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "UAParser/3.0.0": {
+        "runtime": {
+          "lib/netstandard1.3/UAParser.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "dependencies": {
           "CassandraCSharpDriver": "3.5.0",
@@ -1920,6 +1926,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "UAParser/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q3HQawDOf6+8lzYyc+WDSPO2Sz0F5SpD7jaBm22bBy1i1/DtHTw7rPfuX5J7IRDVXxkJXp5QTL1NIvXCaKTkvQ==",
+      "path": "uaparser/3.0.0",
+      "hashPath": "uaparser.3.0.0.nupkg.sha512"
     },
     "DAL/1.0.0": {
       "type": "project",

@@ -5,6 +5,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Configuration;
+using UAParser;
+
 
 
 namespace BL.Token
@@ -70,6 +72,16 @@ namespace BL.Token
 
             dalProvider.SaveToken(t);
             //var tt1 = dalProvider.GetToken("user.user@gmail.com"); //get token
+        }
+
+        public string GetDeviceName(string _userAgent)
+        {
+            var uaParser = Parser.GetDefault();
+
+            ClientInfo c = uaParser.Parse(_userAgent);
+
+            if ((c.OS.Family == "Other") && (c.UserAgent.Family == "Other")) return c.String;
+            else return $"{c.OS.Family} {c.OS.Major}, {c.UserAgent.Family} - {c.Device.Family}";
         }
     }
 }

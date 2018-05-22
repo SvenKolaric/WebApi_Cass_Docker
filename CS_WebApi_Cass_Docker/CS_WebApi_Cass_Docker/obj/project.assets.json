@@ -5103,93 +5103,16 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "Wangkanai.Detection/2.0.0-beta8": {
+      "UAParser/3.0.0": {
         "type": "package",
         "dependencies": {
-          "Wangkanai.Detection.Browser": "2.0.0-beta8",
-          "Wangkanai.Detection.Crawler": "2.0.0-beta8",
-          "Wangkanai.Detection.Device": "2.0.0-beta8",
-          "Wangkanai.Detection.Engine": "2.0.0-beta8",
-          "Wangkanai.Detection.Platform": "2.0.0-beta8"
+          "NETStandard.Library": "1.6.1"
         },
         "compile": {
-          "lib/netstandard2.0/Wangkanai.Detection.dll": {}
+          "lib/netstandard1.3/UAParser.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Wangkanai.Detection.dll": {}
-        }
-      },
-      "Wangkanai.Detection.Browser/2.0.0-beta8": {
-        "type": "package",
-        "dependencies": {
-          "Wangkanai.Detection.Core": "2.0.0-beta8"
-        },
-        "compile": {
-          "lib/netstandard2.0/Wangkanai.Detection.Browser.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Wangkanai.Detection.Browser.dll": {}
-        }
-      },
-      "Wangkanai.Detection.Core/2.0.0-beta8": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Http": "2.0.0",
-          "Microsoft.AspNetCore.Razor.Runtime": "2.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Wangkanai.Detection.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Wangkanai.Detection.Core.dll": {}
-        }
-      },
-      "Wangkanai.Detection.Crawler/2.0.0-beta8": {
-        "type": "package",
-        "dependencies": {
-          "Wangkanai.Detection.Core": "2.0.0-beta8"
-        },
-        "compile": {
-          "lib/netstandard2.0/Wangkanai.Detection.Crawler.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Wangkanai.Detection.Crawler.dll": {}
-        }
-      },
-      "Wangkanai.Detection.Device/2.0.0-beta8": {
-        "type": "package",
-        "dependencies": {
-          "Wangkanai.Detection.Core": "2.0.0-beta8"
-        },
-        "compile": {
-          "lib/netstandard2.0/Wangkanai.Detection.Device.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Wangkanai.Detection.Device.dll": {}
-        }
-      },
-      "Wangkanai.Detection.Engine/2.0.0-beta8": {
-        "type": "package",
-        "dependencies": {
-          "Wangkanai.Detection.Core": "2.0.0-beta8"
-        },
-        "compile": {
-          "lib/netstandard2.0/Wangkanai.Detection.Engine.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Wangkanai.Detection.Engine.dll": {}
-        }
-      },
-      "Wangkanai.Detection.Platform/2.0.0-beta8": {
-        "type": "package",
-        "dependencies": {
-          "Wangkanai.Detection.Core": "2.0.0-beta8"
-        },
-        "compile": {
-          "lib/netstandard2.0/Wangkanai.Detection.Platform.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Wangkanai.Detection.Platform.dll": {}
+          "lib/netstandard1.3/UAParser.dll": {}
         }
       },
       "WindowsAzure.Storage/8.1.4": {
@@ -5241,7 +5164,8 @@
           "DTO": "1.0.0",
           "Entities": "1.0.0",
           "Microsoft.Extensions.Configuration": "2.0.2",
-          "System.IdentityModel.Tokens.Jwt": "5.2.2"
+          "System.IdentityModel.Tokens.Jwt": "5.2.2",
+          "UAParser": "3.0.0"
         },
         "compile": {
           "bin/placeholder/BL.Token.dll": {}
@@ -13680,81 +13604,17 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "Wangkanai.Detection/2.0.0-beta8": {
-      "sha512": "MYDEM+YZMHaQc0ojlrkHtjIdm8VYhvmuA+JOlL8NVR+1k+kf2LYFNpACzRxAgiXKcCcP5KtNbdqpiDSONikBCw==",
+    "UAParser/3.0.0": {
+      "sha512": "q3HQawDOf6+8lzYyc+WDSPO2Sz0F5SpD7jaBm22bBy1i1/DtHTw7rPfuX5J7IRDVXxkJXp5QTL1NIvXCaKTkvQ==",
       "type": "package",
-      "path": "wangkanai.detection/2.0.0-beta8",
+      "path": "uaparser/3.0.0",
       "files": [
-        "lib/netstandard2.0/Wangkanai.Detection.dll",
-        "lib/netstandard2.0/Wangkanai.Detection.xml",
-        "wangkanai.detection.2.0.0-beta8.nupkg.sha512",
-        "wangkanai.detection.nuspec"
-      ]
-    },
-    "Wangkanai.Detection.Browser/2.0.0-beta8": {
-      "sha512": "OIxDvydaz8Qf7JiPWVATXJ79bL4NXQC/bEt2G/Plmy1/n3MxQ9UP5pW0tLICznfvmFQXm5KeRQG0qNIVy87OLQ==",
-      "type": "package",
-      "path": "wangkanai.detection.browser/2.0.0-beta8",
-      "files": [
-        "lib/netstandard2.0/Wangkanai.Detection.Browser.dll",
-        "lib/netstandard2.0/Wangkanai.Detection.Browser.xml",
-        "wangkanai.detection.browser.2.0.0-beta8.nupkg.sha512",
-        "wangkanai.detection.browser.nuspec"
-      ]
-    },
-    "Wangkanai.Detection.Core/2.0.0-beta8": {
-      "sha512": "dpb364xpZz3gTlhRX07ncL4u8T36BrjKXzHhsry0PGBcL/gTtL8sg6rQ6d348kKIReRoFdWRVguuLP241lCHBg==",
-      "type": "package",
-      "path": "wangkanai.detection.core/2.0.0-beta8",
-      "files": [
-        "lib/netstandard2.0/Wangkanai.Detection.Core.dll",
-        "lib/netstandard2.0/Wangkanai.Detection.Core.xml",
-        "wangkanai.detection.core.2.0.0-beta8.nupkg.sha512",
-        "wangkanai.detection.core.nuspec"
-      ]
-    },
-    "Wangkanai.Detection.Crawler/2.0.0-beta8": {
-      "sha512": "UVFZ09DIvkQhW/x42ZEfzr9eTvoSO2HB/fHXzERyg4VFHk23NrtdzS7o8lQ1/1RVFIRVCM9MelksVSMpFGKAVg==",
-      "type": "package",
-      "path": "wangkanai.detection.crawler/2.0.0-beta8",
-      "files": [
-        "lib/netstandard2.0/Wangkanai.Detection.Crawler.dll",
-        "lib/netstandard2.0/Wangkanai.Detection.Crawler.xml",
-        "wangkanai.detection.crawler.2.0.0-beta8.nupkg.sha512",
-        "wangkanai.detection.crawler.nuspec"
-      ]
-    },
-    "Wangkanai.Detection.Device/2.0.0-beta8": {
-      "sha512": "Z6IVonXQeWeSnDBauheGdC/OSXH9PsInWVBVQWQoZ5y1y5PI+JwPM4Xsa9dbF2PrAAL5mZFdAoqCezuLQbtIFQ==",
-      "type": "package",
-      "path": "wangkanai.detection.device/2.0.0-beta8",
-      "files": [
-        "lib/netstandard2.0/Wangkanai.Detection.Device.dll",
-        "lib/netstandard2.0/Wangkanai.Detection.Device.xml",
-        "wangkanai.detection.device.2.0.0-beta8.nupkg.sha512",
-        "wangkanai.detection.device.nuspec"
-      ]
-    },
-    "Wangkanai.Detection.Engine/2.0.0-beta8": {
-      "sha512": "XExb6yokn078UCA0q41wSqauLEsjBmxy/PZ9kM8y+urGWMMbwZy0YG45r+eV8rOXLurO/oXODmRonsCZSLAtZw==",
-      "type": "package",
-      "path": "wangkanai.detection.engine/2.0.0-beta8",
-      "files": [
-        "lib/netstandard2.0/Wangkanai.Detection.Engine.dll",
-        "lib/netstandard2.0/Wangkanai.Detection.Engine.xml",
-        "wangkanai.detection.engine.2.0.0-beta8.nupkg.sha512",
-        "wangkanai.detection.engine.nuspec"
-      ]
-    },
-    "Wangkanai.Detection.Platform/2.0.0-beta8": {
-      "sha512": "MRP4nC+EqAd6uGeKlhYQMSLrpMirHGrjC/v1dUU000vqt6/NDDeLNNwzRfSsUJZeQCv4iBR6OBbek3y+VVBi4Q==",
-      "type": "package",
-      "path": "wangkanai.detection.platform/2.0.0-beta8",
-      "files": [
-        "lib/netstandard2.0/Wangkanai.Detection.Platform.dll",
-        "lib/netstandard2.0/Wangkanai.Detection.Platform.xml",
-        "wangkanai.detection.platform.2.0.0-beta8.nupkg.sha512",
-        "wangkanai.detection.platform.nuspec"
+        "lib/netstandard1.0/UAParser.dll",
+        "lib/netstandard1.0/UAParser.xml",
+        "lib/netstandard1.3/UAParser.dll",
+        "lib/netstandard1.3/UAParser.xml",
+        "uaparser.3.0.0.nupkg.sha512",
+        "uaparser.nuspec"
       ]
     },
     "WindowsAzure.Storage/8.1.4": {
@@ -13827,7 +13687,7 @@
       "Microsoft.AspNetCore.All >= 2.0.8",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.4",
-      "Wangkanai.Detection >= 2.0.0-beta8"
+      "UAParser >= 3.0.0"
     ]
   },
   "packageFolders": {
@@ -13910,9 +13770,9 @@
             "target": "Package",
             "version": "[2.0.4, )"
           },
-          "Wangkanai.Detection": {
+          "UAParser": {
             "target": "Package",
-            "version": "[2.0.0-beta8, )"
+            "version": "[3.0.0, )"
           }
         },
         "imports": [

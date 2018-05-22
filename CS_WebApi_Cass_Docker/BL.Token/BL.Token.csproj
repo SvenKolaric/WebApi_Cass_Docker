@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.2" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.2" />
+    <PackageReference Include="UAParser" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
