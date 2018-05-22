@@ -35,7 +35,7 @@ namespace BL.Token
                 expires: expires,//AddHours(2).AddMinutes(30), //naše vrijeme
                 signingCredentials: creds);
 
-            SaveTokenToDB(user.Email, token, issuedAt, expires);
+            SaveTokenToDB(user.Email, token, issuedAt, expires,deviceName);
             
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
@@ -55,7 +55,7 @@ namespace BL.Token
             return claims;
         }
 
-        private void SaveTokenToDB(string _email, JwtSecurityToken _token, DateTime _iat, DateTime _exp)
+        private void SaveTokenToDB(string _email, JwtSecurityToken _token, DateTime _iat, DateTime _exp, string _deviceName)
         {
             DAL.TokenDB dalProvider = new DAL.TokenDB();
 
@@ -64,7 +64,8 @@ namespace BL.Token
                 TokenData = new JwtSecurityTokenHandler().WriteToken(_token),
                 Email = _email,
                 CreationDate = _iat,
-                ExpirationDate = _exp
+                ExpirationDate = _exp,
+                DeviceName = _deviceName
             };
 
             dalProvider.SaveToken(t);

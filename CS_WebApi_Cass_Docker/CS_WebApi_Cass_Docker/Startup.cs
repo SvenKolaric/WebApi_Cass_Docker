@@ -67,6 +67,8 @@ namespace CS_WebApi_Cass_Docker
                     policy => policy.RequireClaim("Role", "user"));
             });
 
+            services.AddDetectionCore().AddDevice().AddBrowser();
+
             services.AddMvc(options =>
             {
                 options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());

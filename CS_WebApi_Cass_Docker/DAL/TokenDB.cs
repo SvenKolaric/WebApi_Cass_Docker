@@ -34,7 +34,7 @@ namespace DAL
                                                 VALUES (:tokendata, :crtDate, :email, :expDate, :device)");
 
             //cassandra doesnt want to change timezone from gmt - hardcoded solution for now
-            _token.DeviceName = "desktop"; //mora biti definiran jer je sada primary
+            //_token.DeviceName = "desktop"; //mora biti definiran jer je sada primary
             localSession.Execute(CQLstr.Bind(new { tokendata = _token.TokenData, crtDate = _token.CreationDate.AddHours(2), email = _token.Email, expDate = _token.ExpirationDate.AddHours(2), device = _token.DeviceName}));
         }
     }
