@@ -18,6 +18,7 @@ namespace DTO
             this.TokenData = token.TokenData;
             this.ExpirationDate = token.ExpirationDate;
             this.CreationDate = token.CreationDate;
+            this.DeviceName = token.DeviceName;
         }
 
         #endregion
@@ -28,6 +29,7 @@ namespace DTO
         public string TokenData { get; set; }
         public DateTime ExpirationDate { get; set; }
         public DateTime CreationDate { get; set; }
+        public string DeviceName { get; set; }
 
         #endregion
 
@@ -39,6 +41,7 @@ namespace DTO
                 TokenData = TokenData,
                 ExpirationDate = ExpirationDate,
                 CreationDate = CreationDate,
+                DeviceName = DeviceName
             };
             return entity;
         }

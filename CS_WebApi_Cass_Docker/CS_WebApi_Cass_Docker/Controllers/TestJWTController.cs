@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,16 +30,22 @@ namespace CS_WebApi_Cass_Docker.Controllers
         public IEnumerable<Users> Get()
         {
             var currentUser = HttpContext.User; //tututu!!!!!!!!!!!!! info o korisniku
+            //var name = User.Identity.Name;
+
+
+
             string authorization = Request.Headers["Authorization"];
             var currentUser2 = HttpContext.User.Identity.Name;
             // If no authorization header found, nothing to process further
-            if (string.IsNullOrEmpty(authorization))
+
 
             if (authorization.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
             {
                 var token = authorization.Substring("Bearer ".Length).Trim();
                 // If no token found, no further work possible
             }
+
+            var expiration = currentUser.Claims.ElementAt(3).Value;
 
             var resultUserList = new Users[]
             {

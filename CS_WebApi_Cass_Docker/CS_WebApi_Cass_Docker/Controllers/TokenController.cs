@@ -34,7 +34,8 @@ namespace CS_WebApi_Cass_Docker.Controllers
 
             if (user != null)
             {
-                var tokenString = blTokenProvider.BuildToken(user);
+                var deviceName = Request.Headers["User-Agent"];
+                var tokenString = blTokenProvider.BuildToken(user, deviceName);
                 //Request.Headers["Authorization"] = "Bearer " + tokenString;
                 response = Ok(new { token = tokenString });
             }
