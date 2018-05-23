@@ -12,11 +12,11 @@ namespace CS_WebApi_Cass_Docker.Controllers
 {
     //[Produces("application/json")]
     [Route("api/[controller]")]
-    public class TokenController : Controller
+    public class LoginController : Controller
     {
         private IConfiguration _config;
 
-        public TokenController(IConfiguration config)
+        public LoginController(IConfiguration config)
         {
             _config = config;
         }
@@ -24,10 +24,11 @@ namespace CS_WebApi_Cass_Docker.Controllers
         [AllowAnonymous]
         [HttpPost] //get
         [IgnoreAntiforgeryToken]
-        public IActionResult CreateToken([FromBody]Entities.Login login) //maknes ovo
+        public IActionResult Login([FromBody]Entities.Login login) //maknes ovo
         {
             BL.Login.BLLogin blLoginProvider = new BL.Login.BLLogin();
             BL.Token.BLToken blTokenProvider = new BL.Token.BLToken(_config);
+
             IActionResult response = Unauthorized();
 
             var user = blLoginProvider.CheckLogin(login); //makneš ovo

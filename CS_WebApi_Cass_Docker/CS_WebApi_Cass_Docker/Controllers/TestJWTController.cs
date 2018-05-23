@@ -42,7 +42,7 @@ namespace CS_WebApi_Cass_Docker.Controllers
                 var token = authorization.Substring("Bearer ".Length).Trim();
                 // If no token found, no further work possible
             }
-
+            
             var expiration = currentUser.Claims.ElementAt(3).Value;
 
             var resultUserList = new Users[]
