@@ -19,6 +19,7 @@ namespace DTO
             this.ExpirationDate = token.ExpirationDate;
             this.CreationDate = token.CreationDate;
             this.DeviceName = token.DeviceName;
+            this.Blacklisted = token.Blacklisted;
         }
 
         #endregion
@@ -30,6 +31,7 @@ namespace DTO
         public DateTime ExpirationDate { get; set; }
         public DateTime CreationDate { get; set; }
         public string DeviceName { get; set; }
+        public bool Blacklisted { get; set; }
 
         #endregion
 
@@ -41,7 +43,8 @@ namespace DTO
                 TokenData = TokenData,
                 ExpirationDate = ExpirationDate,
                 CreationDate = CreationDate,
-                DeviceName = DeviceName
+                DeviceName = DeviceName,
+                Blacklisted = Blacklisted
             };
             return entity;
         }

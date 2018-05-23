@@ -28,7 +28,6 @@ namespace CS_WebApi_Cass_Docker.Controllers
         {
             BL.Login.BLLogin blLoginProvider = new BL.Login.BLLogin();
             BL.Token.BLToken blTokenProvider = new BL.Token.BLToken(_config);
-
             IActionResult response = Unauthorized();
 
             var user = blLoginProvider.CheckLogin(login); //makneš ovo
@@ -50,6 +49,7 @@ namespace CS_WebApi_Cass_Docker.Controllers
             {
                 return BadRequest("Could not verify username and password");
             }
+
             return response;
         }
     }

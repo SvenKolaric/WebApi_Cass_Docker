@@ -80,7 +80,8 @@ namespace BL.Token
 
             ClientInfo c = uaParser.Parse(_userAgent);
 
-            if ((c.OS.Family == "Other") && (c.UserAgent.Family == "Other")) return c.String;
+            if (c.OS.Family.Equals("Other") && c.UserAgent.Family.Equals("Other") && c.Device.Family.Equals("Other")) return c.String;
+            else if (c.OS.Family.Equals("Other") && c.UserAgent.Family.Equals("Other")) return c.Device.Family;
             else return $"{c.OS.Family} {c.OS.Major}, {c.UserAgent.Family} - {c.Device.Family}";
         }
     }

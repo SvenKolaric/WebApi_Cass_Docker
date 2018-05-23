@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 
-
 namespace CS_WebApi_Cass_Docker.Controllers
 {
     //just testing
@@ -33,7 +32,6 @@ namespace CS_WebApi_Cass_Docker.Controllers
             //var name = User.Identity.Name;
 
 
-
             string authorization = Request.Headers["Authorization"];
             var currentUser2 = HttpContext.User.Identity.Name;
             // If no authorization header found, nothing to process further
@@ -49,8 +47,7 @@ namespace CS_WebApi_Cass_Docker.Controllers
 
             var resultUserList = new Users[]
             {
-                new Users {Email = "papa@papa", Pass = "password", IsAdmin = false },
-                new Users {Email = "admin@admin.hr", Pass = "admin", IsAdmin = true }
+                new Users {Email = "Bravo", Pass = "Ušel si", IsAdmin = false },
             };
 
             //if (currentUser.HasClaim(c => c.Type == ClaimTypes.DateOfBirth))

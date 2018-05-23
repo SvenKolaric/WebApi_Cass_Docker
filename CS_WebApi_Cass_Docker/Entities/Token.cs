@@ -9,6 +9,7 @@ namespace Entities
         public string Email { get; set; }
         public string DeviceName { get; set; }
         public string TokenData { get; set; }
+        public bool Blacklisted { get; set; }
         public DateTime ExpirationDate { get; set; }
         public DateTime CreationDate { get; set; }
     }
