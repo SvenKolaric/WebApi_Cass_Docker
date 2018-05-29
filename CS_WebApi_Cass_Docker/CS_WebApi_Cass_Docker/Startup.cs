@@ -44,16 +44,16 @@ namespace CS_WebApi_Cass_Docker
             {
                 options.RequireHttpsMetadata = false; //sets HTTPS req, olny set false during development
                 options.SaveToken = true;
-
+                
                 options.TokenValidationParameters = new TokenValidationParameters
-                {
+                { 
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = Configuration["Jwt:Issuer"],
                     ValidAudience = Configuration["Jwt:Issuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))//key inace uzimaj iz enviroment varijable
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
                 };
             });
 

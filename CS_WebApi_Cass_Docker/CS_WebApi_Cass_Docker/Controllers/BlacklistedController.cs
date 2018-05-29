@@ -13,14 +13,14 @@ namespace CS_WebApi_Cass_Docker.Controllers
     {
         // GET: api/Blacklisted
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> GetBlacklist()
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET: api/Blacklisted/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}", Name = "GetBlacklistID")]
+        public string GetBlacklistID(int id)
         {
             return "value";
         }

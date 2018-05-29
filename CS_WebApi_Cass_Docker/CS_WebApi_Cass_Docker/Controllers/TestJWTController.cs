@@ -29,8 +29,18 @@ namespace CS_WebApi_Cass_Docker.Controllers
         public IEnumerable<Users> Get()
         {
             var currentUser = HttpContext.User; //tututu!!!!!!!!!!!!! info o korisniku
-            //var name = User.Identity.Name;
+                                                //var name = User.Identity.Name;
 
+
+            //// Inside on of your controllers
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    string accessToken = await HttpContext.GetTokenAsync("access_token");
+            //    string idToken = await HttpContext.GetTokenAsync("id_token");
+
+            //    // Now you can use them. For more info on when and how to use the 
+            //    // access_token and id_token, see https://auth0.com/docs/tokens
+            //}
 
             string authorization = Request.Headers["Authorization"];
             var currentUser2 = HttpContext.User.Identity.Name;
