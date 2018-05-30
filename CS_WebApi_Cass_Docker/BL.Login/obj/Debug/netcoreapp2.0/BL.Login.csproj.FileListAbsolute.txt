@@ -11,7 +11,7 @@ D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\BL.User.pdb
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\DTO.pdb
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\Entities.pdb
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\bin\Debug\netcoreapp2.0\DAL.pdb
-D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\obj\Debug\netcoreapp2.0\BL.Login.csprojResolveAssemblyReference.cache
+D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\obj\Debug\netcoreapp2.0\BL.Login.csprojAssemblyReference.cache
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\obj\Debug\netcoreapp2.0\BL.Login.csproj.CoreCompileInputs.cache
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\obj\Debug\netcoreapp2.0\BL.Login.AssemblyInfoInputs.cache
 D:\CS\GIT\CS_WebApi_Cass_Docker\BL.Login\obj\Debug\netcoreapp2.0\BL.Login.AssemblyInfo.cs

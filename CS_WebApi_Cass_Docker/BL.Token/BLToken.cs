@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using UAParser;
+using System.Linq;
 
 
 
@@ -14,16 +15,23 @@ namespace BL.Token
     public class BLToken
     {
         private IConfiguration _config;
+        private DAL.TokenDB _dalProvider = new DAL.TokenDB();
+
+        public BLToken()
+        {
+        }        
 
         public BLToken(IConfiguration config)
         {
-            _config = config;
-        }        
+            this._config = config;
+        }
 
         public string BuildToken(DTO.User user, string deviceName)
         {
+            TokenValidation tokenValidation = new TokenValidation();
+
             DateTime issuedAt = DateTime.Now;
-            DateTime expires = DateTime.Now.AddMinutes(11);
+            DateTime expires = DateTime.Now.AddMinutes(60);
 
             var claims = BuildClaims(user, issuedAt.ToString(), expires.ToString());
 
@@ -33,9 +41,14 @@ namespace BL.Token
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
                 _config["Jwt:Issuer"],
                 claims,
-                //notBefore: DateTime.Now,//.AddHours(2), //naše vrijeme
-                expires: expires,//AddHours(2).AddMinutes(30), //naše vrijeme
+                expires: expires,
                 signingCredentials: creds);
+
+            //var existingToken = tokenValidation.CheckIfTokenExists(token.ToString(), user.Email, deviceName);
+            //if (existingToken != null)
+            //{
+            //    return existingToken.TokenData;
+            //}
 
             SaveTokenToDB(user.Email, token, issuedAt, expires,deviceName);
             
@@ -59,8 +72,6 @@ namespace BL.Token
 
         private void SaveTokenToDB(string _email, JwtSecurityToken _token, DateTime _iat, DateTime _exp, string _deviceName)
         {
-            DAL.TokenDB dalProvider = new DAL.TokenDB();
-
             Entities.Token t = new Entities.Token
             {
                 TokenData = new JwtSecurityTokenHandler().WriteToken(_token),
@@ -70,7 +81,7 @@ namespace BL.Token
                 DeviceName = _deviceName
             };
 
-            dalProvider.SaveToken(t);
+            _dalProvider.SaveToken(t);
             //var tt1 = dalProvider.GetToken("user.user@gmail.com"); //get token
         }
 
@@ -83,6 +94,20 @@ namespace BL.Token
             if (c.OS.Family.Equals("Other") && c.UserAgent.Family.Equals("Other") && c.Device.Family.Equals("Other")) return c.String;
             else if (c.OS.Family.Equals("Other") && c.UserAgent.Family.Equals("Other")) return c.Device.Family;
             else return $"{c.OS.Family} {c.OS.Major}, {c.UserAgent.Family} - {c.Device.Family}";
+        }
+
+        //blacklist
+
+        public IEnumerable<Entities.Token> GetListOfUserTokens(string _email)
+        {
+            var result = _dalProvider.GetTokensByUser(_email);
+
+            return result;
+        }
+
+        public void DeleteToken(string _email, string _deviceName)
+        {
+            _dalProvider.DeleteToken(_email, _deviceName);
         }
     }
 }

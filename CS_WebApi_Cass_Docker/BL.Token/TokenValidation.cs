@@ -8,8 +8,41 @@ namespace BL.Token
 {
     public class TokenValidation
     {
-        public bool CheckTokenExpDate(JwtSecurityToken _token)
+        public TokenValidation()
         {
+
+        }
+
+        public Entities.Token CheckIfTokenExistsAndValid(string _token, string _email, string _deviceName )
+        {
+            DAL.TokenDB dalProvider = new DAL.TokenDB();
+
+            var token = dalProvider.GetToken(_email, _deviceName);
+
+            if(token != null)
+            {
+                if (token.ExpirationDate >= DateTime.Now)
+                {
+                    return token;
+                }
+            }
+
+            return null;
+        }
+
+        public bool CheckIfTokenBlacklisted(string _token, string _email, string _deviceName)
+        {
+            DAL.TokenDB dalProvider = new DAL.TokenDB();
+
+            var token = dalProvider.GetToken(_email, _deviceName);
+
+            if (token != null)
+            {
+                if(token.Blacklisted == true)
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }

@@ -3,7 +3,7 @@ D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\bin\Debug\netcoreapp2.0\DTO.dll
 D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\bin\Debug\netcoreapp2.0\DTO.pdb
 D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\bin\Debug\netcoreapp2.0\Entities.dll
 D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\bin\Debug\netcoreapp2.0\Entities.pdb
-D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\obj\Debug\netcoreapp2.0\DTO.csprojResolveAssemblyReference.cache
+D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\obj\Debug\netcoreapp2.0\DTO.csprojAssemblyReference.cache
 D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\obj\Debug\netcoreapp2.0\DTO.csproj.CoreCompileInputs.cache
 D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\obj\Debug\netcoreapp2.0\DTO.AssemblyInfoInputs.cache
 D:\CS\GIT\CS_WebApi_Cass_Docker\DTO\obj\Debug\netcoreapp2.0\DTO.AssemblyInfo.cs

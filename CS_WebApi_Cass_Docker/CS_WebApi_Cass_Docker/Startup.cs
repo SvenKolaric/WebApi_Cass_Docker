@@ -28,7 +28,7 @@ namespace CS_WebApi_Cass_Docker
         public void ConfigureServices(IServiceCollection services)
         {
             //SECRET KEY MUST NOT BE KEPT IN THE appsetting.json!!!!!! ali zasada da ne kompliciramo
-            var secretKey = Environment.GetEnvironmentVariable("JWT_KEY"); 
+            var secretKey = "k!dags7JF2O3R$Qfa)qaOF2I2#$(=GOASRGA2$FGG$OW)Wga2342tRRWR$Teg%EHW%H6222#$";// Environment.GetEnvironmentVariable("JWT_KEY");
 
             //Register JWT authentication schema, Jwt:Issuer and Jwt:Key stored in appsettings.json
             //For the JWT to be valid:
@@ -36,6 +36,7 @@ namespace CS_WebApi_Cass_Docker
             //2.Recipient is authorized to receive it (ValidateAudience = true)
             //3.Check expiration date and the signing key of the issuer (ValidateLifetime = true)
             //4.Verify signing key is part of a list of trusted keys (ValidateIssuerSigningKey = true)
+
             services.AddAuthentication(options =>
             {
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -44,18 +45,59 @@ namespace CS_WebApi_Cass_Docker
             {
                 options.RequireHttpsMetadata = false; //sets HTTPS req, olny set false during development
                 options.SaveToken = true;
-                
+
                 options.TokenValidationParameters = new TokenValidationParameters
-                { 
+                {
+                    ClockSkew = TimeSpan.FromMinutes(5),
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateLifetime = true,
+                    RequireExpirationTime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = Configuration["Jwt:Issuer"],
-                    ValidAudience = Configuration["Jwt:Issuer"],
+                    ValidIssuer = "http://localhost/CSApi", //dodaj više ovih i za local host http://localhost:2684/
+                    ValidAudience = "http://localhost/CSApi",
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
                 };
             });
+
+
+            //SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
+
+            //// Configure JwtIssuerOptions
+            //services.Configure<JwtBearerOptions>(options =>
+            //{
+            //    //options.ClaimsIssuer = "http://localhost/CSApi"; new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
+            //    //options.Audience = "http://localhost/CSApi";
+            //    options.SaveToken = true;
+            //});
+
+            //var tokenValidationParameters = new TokenValidationParameters
+            //{
+            //    ValidateIssuer = true,
+            //    ValidIssuer = "http://localhost/CSApi",
+
+            //    ValidateAudience = true,
+            //    ValidAudience = "http://localhost/CSApi",
+
+            //    ValidateIssuerSigningKey = true,
+            //    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
+
+            //    RequireExpirationTime = true,
+            //    ValidateLifetime = true,
+            //    ClockSkew = TimeSpan.FromMinutes(5)
+            //};
+
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //}).AddJwtBearer(configureOptions =>
+            //{
+            //    configureOptions.ClaimsIssuer = "http://localhost/CSApi";
+            //    configureOptions.TokenValidationParameters = tokenValidationParameters;
+            //    configureOptions.SaveToken = true;
+            //});
+
 
 
             services.AddAuthorization(options =>

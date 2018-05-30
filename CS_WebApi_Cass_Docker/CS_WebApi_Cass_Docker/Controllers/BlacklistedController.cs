@@ -3,19 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace CS_WebApi_Cass_Docker.Controllers
 {
     [Produces("application/json")]
     [Route("api/Blacklisted")]
+    [Authorize]
     public class BlacklistedController : Controller
     {
         // GET: api/Blacklisted
         [HttpGet]
-        public IEnumerable<string> GetBlacklist()
+        public IEnumerable<Entities.Token> GetUserBlacklist()
         {
-            return new string[] { "value1", "value2" };
+            BL.Token.BLToken blProvider = new BL.Token.BLToken();
+
+            var emailClaim = HttpContext.User.Claims.Where(c => c.Type == ClaimTypes.Email).FirstOrDefault();
+
+            return blProvider.GetListOfUserTokens(emailClaim.Value);
         }
 
         // GET: api/Blacklisted/5
@@ -38,9 +46,11 @@ namespace CS_WebApi_Cass_Docker.Controllers
         }
         
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{email, devicename}")]
+        public void Delete(string email, string deviceName)
         {
+            BL.Token.BLToken blProvider = new BL.Token.BLToken();
+            blProvider.DeleteToken(email, deviceName);
         }
     }
 }
