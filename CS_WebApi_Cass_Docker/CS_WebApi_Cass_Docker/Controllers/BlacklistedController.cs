@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
-
+using System.Net.Http;
 
 namespace CS_WebApi_Cass_Docker.Controllers
 {
@@ -44,13 +44,19 @@ namespace CS_WebApi_Cass_Docker.Controllers
         public void Put(int id, [FromBody]string value)
         {
         }
-        
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{email, devicename}")]
-        public void Delete(string email, string deviceName)
+
+        // DELETE: api/Blacklisted/Delete/user.user@gmail.com/Chrome%2066%20Windows%2010%20-%20Other(JavaScript function encodes space as %20)
+        [HttpDelete("Delete/{email}/{deviceName}")]
+        [IgnoreAntiforgeryToken]
+        public HttpResponseMessage Delete(string email, string deviceName)
         {
             BL.Token.BLToken blProvider = new BL.Token.BLToken();
             blProvider.DeleteToken(email, deviceName);
+            var response = new HttpResponseMessage
+            {
+                StatusCode = System.Net.HttpStatusCode.OK
+            };
+            return response;
         }
     }
 }

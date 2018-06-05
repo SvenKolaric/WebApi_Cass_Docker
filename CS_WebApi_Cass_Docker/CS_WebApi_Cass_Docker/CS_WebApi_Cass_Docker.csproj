@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="aspnetcore-stdout_7496_201865124512.log" />
+    <None Remove="aspnetcore-stdout_7496_201865125155.log" />
+    <None Remove="aspnetcore-stdout_7496_201865125657.log" />
+    <None Remove="aspnetcore-stdout_7496_20186513418.log" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
