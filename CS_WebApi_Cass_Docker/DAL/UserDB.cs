@@ -11,28 +11,34 @@ namespace DAL
     {
         public Entities.User GetUser(string _email)
         {
-            string CQLstr = @"SELECT email, fullname, id, password, salt, role 
+            string CQLstr = @"SELECT email, fullname, password, salt, role 
                               FROM webapicassdb.user_by_email 
                               WHERE email = ?";
 
             ISession localSession = GetSession();
             IMapper mapper = new Mapper(localSession);
-            //var statement1 = localSession.Prepare(CQLstr);
-
-            //RowSet result = localSession.Execute(statement1.Bind(_email));
 
             var result = mapper.Single<Entities.User>(CQLstr, _email);
 
             return result;
+        }
 
-            //UserDB us = new UserDB();
-            //var result = us.GetUser("admin.admin@gmail.com");
+        public void SaveUser(Entities.User _user)
+        {
+            ISession localSession = GetSession();
 
-            //foreach (Row r in result)
-            //{
-            //    Console.WriteLine(r.GetValue<string>("email"));
-            //    Console.ReadKey();
-            //}
+            var CQLstr = localSession.Prepare(@"INSERT INTO user_by_email (email, fullname, password, salt, role) 
+                                              VALUES (:email, :name, :password, :salt, :role)");
+
+            localSession.Execute(CQLstr.Bind(new
+            {
+                email = _user.Email,
+                name = _user.FullName,
+                password = _user.Password,
+                salt = _user.Salt,
+                role = "user"
+            }));
         }
     }
 }
+

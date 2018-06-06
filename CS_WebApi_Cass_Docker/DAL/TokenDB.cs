@@ -17,9 +17,6 @@ namespace DAL
 
             ISession localSession = GetSession();
             IMapper mapper = new Mapper(localSession);
-            //var statement1 = localSession.Prepare(CQLstr);
-
-            //RowSet result = localSession.Execute(statement1.Bind(_email));
 
             var result = mapper.Single<Entities.Token>(CQLstr, _email, _devicename);
 
@@ -35,21 +32,6 @@ namespace DAL
                               FROM tokens 
                               WHERE email = ?");
 
-            //MappingConfiguration.Global.Define(
-            //new Map<Entities.Token>()
-            //  .TableName("tokens")
-            //  .PartitionKey(u => u.Email)
-            //  .ClusteringKey(u => u.DeviceName)
-            //  .Column(u => u.Email, cm => cm.WithName("email"))
-            //  .Column(u => u.DeviceName, cm => cm.WithName("devicename"))
-            //  .Column(u => u.Blacklisted, cm => cm.WithName("blacklisted"))
-            //  .Column(u => u.CreationDate, cm => cm.WithName("creationdate"))
-            //  .Column(u => u.ExpirationDate, cm => cm.WithName("expirationdate"))
-            //  .Column(u => u.TokenData, cm => cm.WithName("tokendata")));
-
-
-            //IEnumerable<Entities.Token> result = mapper.Fetch<Entities.Token>(CQLstr, _email);
-
             List<Entities.Token> result = new List<Entities.Token>();
 
             var rs = localSession.Execute(CQLstr.Bind(new { email = _email }));
@@ -61,7 +43,7 @@ namespace DAL
                     DeviceName = row.GetValue<string>("devicename"),
                     CreationDate = row.GetValue<DateTime>("creationdate"),
                     ExpirationDate = row.GetValue<DateTime>("expirationdate"),
-                    Blacklisted =row.GetValue<Boolean>("blacklisted"),
+                    Blacklisted = row.GetValue<Boolean>("blacklisted"),
                     TokenData = row.GetValue<string>("tokendata")
                 };
                 result.Add(t);
@@ -79,8 +61,15 @@ namespace DAL
 
             //cassandra doesnt want to change timezone from gmt - hardcoded solution for now
             //_token.DeviceName = "desktop"; //mora biti definiran jer je sada primary
-            localSession.Execute(CQLstr.Bind(new { tokendata = _token.TokenData, crtDate = _token.CreationDate.AddHours(2), email = _token.Email,
-                                                   expDate = _token.ExpirationDate.AddHours(2), device = _token.DeviceName, blacklisted = false}));
+            localSession.Execute(CQLstr.Bind(new
+            {
+                tokendata = _token.TokenData,
+                crtDate = _token.CreationDate.AddHours(2),
+                email = _token.Email,
+                expDate = _token.ExpirationDate.AddHours(2),
+                device = _token.DeviceName,
+                blacklisted = false
+            }));
         }
 
         public void DeleteToken(string _email, string _deviceName)

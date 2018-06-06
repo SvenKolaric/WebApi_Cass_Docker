@@ -21,6 +21,13 @@ namespace CS_WebApi_Cass_Docker.Controllers
             _config = config;
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public string GetLogin()
+        {
+            return "Welcome";
+        }
+
         [AllowAnonymous]
         [HttpPost] //get
         [IgnoreAntiforgeryToken]
@@ -32,13 +39,6 @@ namespace CS_WebApi_Cass_Docker.Controllers
             IActionResult response = Unauthorized();
 
             var user = blLoginProvider.CheckLogin(login); //makneš ovo
-
-            //var user = new DTO.User
-            //{
-            //    Email = "user.user@gmail.com",
-            //    Password = "12345678",
-            //    Role = "user"
-            //};   //odkomentiraš ovo
 
             if (user != null)
             {

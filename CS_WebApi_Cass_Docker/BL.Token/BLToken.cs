@@ -31,11 +31,10 @@ namespace BL.Token
             TokenValidation tokenValidation = new TokenValidation();
 
             DateTime issuedAt = DateTime.Now;
-            DateTime expires = DateTime.Now.AddMinutes(60);
+            DateTime expires = DateTime.Now.AddHours(24);
 
             var claims = BuildClaims(user, issuedAt.ToString(), expires.ToString());
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("JWT_KEY")));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],

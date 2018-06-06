@@ -27,10 +27,10 @@ namespace CS_WebApi_Cass_Docker
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //SECRET KEY MUST NOT BE KEPT IN THE appsetting.json!!!!!! ali zasada da ne kompliciramo
-            var secretKey = "k!dags7JF2O3R$Qfa)qaOF2I2#$(=GOASRGA2$FGG$OW)Wga2342tRRWR$Teg%EHW%H6222#$";// Environment.GetEnvironmentVariable("JWT_KEY");
 
-            //Register JWT authentication schema, Jwt:Issuer and Jwt:Key stored in appsettings.json
+            var secretKey = Environment.GetEnvironmentVariable("JWT_KEY"); //IIS CSWebApiPool -> loadUserProfile = TRUE
+
+            //Register JWT authentication schema,
             //For the JWT to be valid:
             //1.Validate that the server created that token (ValidateIssuer = true)
             //2.Recipient is authorized to receive it (ValidateAudience = true)
@@ -43,7 +43,7 @@ namespace CS_WebApi_Cass_Docker
             })
             .AddJwtBearer(options =>
             {
-                options.RequireHttpsMetadata = false; //sets HTTPS req, olny set false during development
+                options.RequireHttpsMetadata = false; //sets HTTPS req, only set false during development
                 options.SaveToken = true;
 
                 options.TokenValidationParameters = new TokenValidationParameters
@@ -59,46 +59,6 @@ namespace CS_WebApi_Cass_Docker
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
                 };
             });
-
-
-            //SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
-
-            //// Configure JwtIssuerOptions
-            //services.Configure<JwtBearerOptions>(options =>
-            //{
-            //    //options.ClaimsIssuer = "http://localhost/CSApi"; new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
-            //    //options.Audience = "http://localhost/CSApi";
-            //    options.SaveToken = true;
-            //});
-
-            //var tokenValidationParameters = new TokenValidationParameters
-            //{
-            //    ValidateIssuer = true,
-            //    ValidIssuer = "http://localhost/CSApi",
-
-            //    ValidateAudience = true,
-            //    ValidAudience = "http://localhost/CSApi",
-
-            //    ValidateIssuerSigningKey = true,
-            //    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
-
-            //    RequireExpirationTime = true,
-            //    ValidateLifetime = true,
-            //    ClockSkew = TimeSpan.FromMinutes(5)
-            //};
-
-            //services.AddAuthentication(options =>
-            //{
-            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //}).AddJwtBearer(configureOptions =>
-            //{
-            //    configureOptions.ClaimsIssuer = "http://localhost/CSApi";
-            //    configureOptions.TokenValidationParameters = tokenValidationParameters;
-            //    configureOptions.SaveToken = true;
-            //});
-
-
 
             services.AddAuthorization(options =>
             {
@@ -124,7 +84,6 @@ namespace CS_WebApi_Cass_Docker
             }
 
             app.UseAuthentication();
-
             app.UseMvc();
         }
     }

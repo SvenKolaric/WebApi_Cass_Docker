@@ -16,7 +16,6 @@ namespace DTO
 
         public User(Entities.User user)
         {
-            this.ID = user.ID;
             this.Email = user.Email;
             this.FullName = user.FullName;
             this.Password = user.Password;
@@ -28,7 +27,6 @@ namespace DTO
 
         #region Properties
 
-        public Guid ID { get; set; }
         public string Email { get; set; }
         public string FullName { get; set; }
         public string Password { get; set; }
@@ -41,7 +39,6 @@ namespace DTO
         {
             Entities.User entity = new Entities.User
             {
-                ID = ID,
                 Email = Email,
                 FullName = FullName,
                 Password = Password,

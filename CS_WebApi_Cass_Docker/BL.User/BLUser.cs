@@ -13,5 +13,10 @@ namespace BL.User
             var userDTO = new DTO.User(user);
             return userDTO;
         }
+
+        public void Save(DTO.User user)
+        {
+
+        }
     }
 }
